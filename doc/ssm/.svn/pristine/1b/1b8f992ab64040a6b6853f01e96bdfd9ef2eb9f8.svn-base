@@ -1,0 +1,155 @@
+package com.jsx.model;
+
+import java.util.Date;
+
+public class Requirement {
+    private Integer id;
+
+    private Integer idno;
+
+    private String reqtype;
+
+    private String requirementname;
+
+    private String istest;
+
+    private String manager;
+
+    private String testleader;
+
+    private String istestpro;
+
+    private String developer;
+
+    private String technicalpersonnel;
+
+    private String description;
+
+    private Boolean isenable;
+
+    private Date lasttimestamp;
+
+    private Short status;
+
+    private Boolean isdelete;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getIdno() {
+        return idno;
+    }
+
+    public void setIdno(Integer idno) {
+        this.idno = idno;
+    }
+
+    public String getReqtype() {
+        return reqtype;
+    }
+
+    public void setReqtype(String reqtype) {
+        this.reqtype = reqtype == null ? null : reqtype.trim();
+    }
+
+    public String getRequirementname() {
+        return requirementname;
+    }
+
+    public void setRequirementname(String requirementname) {
+        this.requirementname = requirementname == null ? null : requirementname.trim();
+    }
+
+    public String getIstest() {
+        return istest;
+    }
+
+    public void setIstest(String istest) {
+        this.istest = istest == null ? null : istest.trim();
+    }
+
+    public String getManager() {
+        return manager;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager == null ? null : manager.trim();
+    }
+
+    public String getTestleader() {
+        return testleader;
+    }
+
+    public void setTestleader(String testleader) {
+        this.testleader = testleader == null ? null : testleader.trim();
+    }
+
+    public String getIstestpro() {
+        return istestpro;
+    }
+
+    public void setIstestpro(String istestpro) {
+        this.istestpro = istestpro == null ? null : istestpro.trim();
+    }
+
+    public String getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(String developer) {
+        this.developer = developer == null ? null : developer.trim();
+    }
+
+    public String getTechnicalpersonnel() {
+        return technicalpersonnel;
+    }
+
+    public void setTechnicalpersonnel(String technicalpersonnel) {
+        this.technicalpersonnel = technicalpersonnel == null ? null : technicalpersonnel.trim();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public Boolean getIsenable() {
+        return isenable;
+    }
+
+    public void setIsenable(Boolean isenable) {
+        this.isenable = isenable;
+    }
+
+    public Date getLasttimestamp() {
+        return lasttimestamp;
+    }
+
+    public void setLasttimestamp(Date lasttimestamp) {
+        this.lasttimestamp = lasttimestamp;
+    }
+
+    public Short getStatus() {
+        return status;
+    }
+
+    public void setStatus(Short status) {
+        this.status = status;
+    }
+
+    public Boolean getIsdelete() {
+        return isdelete;
+    }
+
+    public void setIsdelete(Boolean isdelete) {
+        this.isdelete = isdelete;
+    }
+}

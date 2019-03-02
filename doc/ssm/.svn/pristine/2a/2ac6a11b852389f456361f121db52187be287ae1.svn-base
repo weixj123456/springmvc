@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsx.dao.RequirementMapper">
+  <resultMap id="BaseResultMap" type="com.jsx.model.Requirement">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="idNo" jdbcType="INTEGER" property="idno" />
+    <result column="reqtype" jdbcType="VARCHAR" property="reqtype" />
+    <result column="requirementName" jdbcType="VARCHAR" property="requirementname" />
+    <result column="istest" jdbcType="VARCHAR" property="istest" />
+    <result column="manager" jdbcType="VARCHAR" property="manager" />
+    <result column="testleader" jdbcType="VARCHAR" property="testleader" />
+    <result column="istestpro" jdbcType="VARCHAR" property="istestpro" />
+    <result column="developer" jdbcType="VARCHAR" property="developer" />
+    <result column="technicalpersonnel" jdbcType="VARCHAR" property="technicalpersonnel" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="IsEnable" jdbcType="BIT" property="isenable" />
+    <result column="LastTimestamp" jdbcType="TIMESTAMP" property="lasttimestamp" />
+    <result column="Status" jdbcType="SMALLINT" property="status" />
+    <result column="IsDelete" jdbcType="BIT" property="isdelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, idNo, reqtype, requirementName, istest, manager, testleader, istestpro, developer, 
+    technicalpersonnel, description, IsEnable, LastTimestamp, Status, IsDelete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from requirement
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from requirement
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jsx.model.Requirement">
+    insert into requirement (id, idNo, reqtype, 
+      requirementName, istest, manager, 
+      testleader, istestpro, developer, 
+      technicalpersonnel, description, IsEnable, 
+      LastTimestamp, Status, IsDelete
+      )
+    values (#{id,jdbcType=INTEGER}, #{idno,jdbcType=INTEGER}, #{reqtype,jdbcType=VARCHAR}, 
+      #{requirementname,jdbcType=VARCHAR}, #{istest,jdbcType=VARCHAR}, #{manager,jdbcType=VARCHAR}, 
+      #{testleader,jdbcType=VARCHAR}, #{istestpro,jdbcType=VARCHAR}, #{developer,jdbcType=VARCHAR}, 
+      #{technicalpersonnel,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{isenable,jdbcType=BIT}, 
+      #{lasttimestamp,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jsx.model.Requirement">
+    insert into requirement
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="idno != null">
+        idNo,
+      </if>
+      <if test="reqtype != null">
+        reqtype,
+      </if>
+      <if test="requirementname != null">
+        requirementName,
+      </if>
+      <if test="istest != null">
+        istest,
+      </if>
+      <if test="manager != null">
+        manager,
+      </if>
+      <if test="testleader != null">
+        testleader,
+      </if>
+      <if test="istestpro != null">
+        istestpro,
+      </if>
+      <if test="developer != null">
+        developer,
+      </if>
+      <if test="technicalpersonnel != null">
+        technicalpersonnel,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="isenable != null">
+        IsEnable,
+      </if>
+      <if test="lasttimestamp != null">
+        LastTimestamp,
+      </if>
+      <if test="status != null">
+        Status,
+      </if>
+      <if test="isdelete != null">
+        IsDelete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="idno != null">
+        #{idno,jdbcType=INTEGER},
+      </if>
+      <if test="reqtype != null">
+        #{reqtype,jdbcType=VARCHAR},
+      </if>
+      <if test="requirementname != null">
+        #{requirementname,jdbcType=VARCHAR},
+      </if>
+      <if test="istest != null">
+        #{istest,jdbcType=VARCHAR},
+      </if>
+      <if test="manager != null">
+        #{manager,jdbcType=VARCHAR},
+      </if>
+      <if test="testleader != null">
+        #{testleader,jdbcType=VARCHAR},
+      </if>
+      <if test="istestpro != null">
+        #{istestpro,jdbcType=VARCHAR},
+      </if>
+      <if test="developer != null">
+        #{developer,jdbcType=VARCHAR},
+      </if>
+      <if test="technicalpersonnel != null">
+        #{technicalpersonnel,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isenable != null">
+        #{isenable,jdbcType=BIT},
+      </if>
+      <if test="lasttimestamp != null">
+        #{lasttimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="isdelete != null">
+        #{isdelete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jsx.model.Requirement">
+    update requirement
+    <set>
+      <if test="idno != null">
+        idNo = #{idno,jdbcType=INTEGER},
+      </if>
+      <if test="reqtype != null">
+        reqtype = #{reqtype,jdbcType=VARCHAR},
+      </if>
+      <if test="requirementname != null">
+        requirementName = #{requirementname,jdbcType=VARCHAR},
+      </if>
+      <if test="istest != null">
+        istest = #{istest,jdbcType=VARCHAR},
+      </if>
+      <if test="manager != null">
+        manager = #{manager,jdbcType=VARCHAR},
+      </if>
+      <if test="testleader != null">
+        testleader = #{testleader,jdbcType=VARCHAR},
+      </if>
+      <if test="istestpro != null">
+        istestpro = #{istestpro,jdbcType=VARCHAR},
+      </if>
+      <if test="developer != null">
+        developer = #{developer,jdbcType=VARCHAR},
+      </if>
+      <if test="technicalpersonnel != null">
+        technicalpersonnel = #{technicalpersonnel,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isenable != null">
+        IsEnable = #{isenable,jdbcType=BIT},
+      </if>
+      <if test="lasttimestamp != null">
+        LastTimestamp = #{lasttimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        Status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="isdelete != null">
+        IsDelete = #{isdelete,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jsx.model.Requirement">
+    update requirement
+    set idNo = #{idno,jdbcType=INTEGER},
+      reqtype = #{reqtype,jdbcType=VARCHAR},
+      requirementName = #{requirementname,jdbcType=VARCHAR},
+      istest = #{istest,jdbcType=VARCHAR},
+      manager = #{manager,jdbcType=VARCHAR},
+      testleader = #{testleader,jdbcType=VARCHAR},
+      istestpro = #{istestpro,jdbcType=VARCHAR},
+      developer = #{developer,jdbcType=VARCHAR},
+      technicalpersonnel = #{technicalpersonnel,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      IsEnable = #{isenable,jdbcType=BIT},
+      LastTimestamp = #{lasttimestamp,jdbcType=TIMESTAMP},
+      Status = #{status,jdbcType=SMALLINT},
+      IsDelete = #{isdelete,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

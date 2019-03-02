@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsx.dao.RequireMapper">
+  <resultMap id="BaseResultMap" type="com.jsx.model.Require">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="reqid" jdbcType="INTEGER" property="reqid" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="reqname" jdbcType="VARCHAR" property="reqname" />
+    <result column="istest" jdbcType="VARCHAR" property="istest" />
+    <result column="reqpartment" jdbcType="VARCHAR" property="reqpartment" />
+    <result column="relatesys" jdbcType="VARCHAR" property="relatesys" />
+    <result column="yewuer" jdbcType="VARCHAR" property="yewuer" />
+    <result column="tester" jdbcType="VARCHAR" property="tester" />
+    <result column="isproduct" jdbcType="VARCHAR" property="isproduct" />
+    <result column="developer" jdbcType="VARCHAR" property="developer" />
+    <result column="isupdate" jdbcType="VARCHAR" property="isupdate" />
+    <result column="productdate" jdbcType="VARCHAR" property="productdate" />
+    <result column="descp" jdbcType="VARCHAR" property="descp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, reqid, type, reqname, istest, reqpartment, relatesys, yewuer, tester, isproduct, 
+    developer, isupdate, productdate, descp
+  </sql>
+  <select id="select" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from require1
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete from require1
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jsx.model.Require">
+    insert into require1 (id, reqid, type, 
+      reqname, istest, reqpartment, 
+      relatesys, yewuer, tester, 
+      isproduct, developer, isupdate, 
+      productdate, descp)
+    values (#{id,jdbcType=INTEGER}, #{reqid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
+      #{reqname,jdbcType=VARCHAR}, #{istest,jdbcType=VARCHAR}, #{reqpartment,jdbcType=VARCHAR}, 
+      #{relatesys,jdbcType=VARCHAR}, #{yewuer,jdbcType=VARCHAR}, #{tester,jdbcType=VARCHAR}, 
+      #{isproduct,jdbcType=VARCHAR}, #{developer,jdbcType=VARCHAR}, #{isupdate,jdbcType=VARCHAR}, 
+      #{productdate,jdbcType=VARCHAR}, #{descp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insert1" parameterType="com.jsx.model.Require">
+    insert into require1
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="reqid != null">
+        reqid,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="reqname != null">
+        reqname,
+      </if>
+      <if test="istest != null">
+        istest,
+      </if>
+      <if test="reqpartment != null">
+        reqpartment,
+      </if>
+      <if test="relatesys != null">
+        relatesys,
+      </if>
+      <if test="yewuer != null">
+        yewuer,
+      </if>
+      <if test="tester != null">
+        tester,
+      </if>
+      <if test="isproduct != null">
+        isproduct,
+      </if>
+      <if test="developer != null">
+        developer,
+      </if>
+      <if test="isupdate != null">
+        isupdate,
+      </if>
+      <if test="productdate != null">
+        productdate,
+      </if>
+      <if test="descp != null">
+        descp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="reqid != null">
+        #{reqid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="reqname != null">
+        #{reqname,jdbcType=VARCHAR},
+      </if>
+      <if test="istest != null">
+        #{istest,jdbcType=VARCHAR},
+      </if>
+      <if test="reqpartment != null">
+        #{reqpartment,jdbcType=VARCHAR},
+      </if>
+      <if test="relatesys != null">
+        #{relatesys,jdbcType=VARCHAR},
+      </if>
+      <if test="yewuer != null">
+        #{yewuer,jdbcType=VARCHAR},
+      </if>
+      <if test="tester != null">
+        #{tester,jdbcType=VARCHAR},
+      </if>
+      <if test="isproduct != null">
+        #{isproduct,jdbcType=VARCHAR},
+      </if>
+      <if test="developer != null">
+        #{developer,jdbcType=VARCHAR},
+      </if>
+      <if test="isupdate != null">
+        #{isupdate,jdbcType=VARCHAR},
+      </if>
+      <if test="productdate != null">
+        #{productdate,jdbcType=VARCHAR},
+      </if>
+      <if test="descp != null">
+        #{descp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="update" parameterType="com.jsx.model.Require">
+    update require1
+    <set>
+      <if test="reqid != null">
+        reqid = #{reqid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="reqname != null">
+        reqname = #{reqname,jdbcType=VARCHAR},
+      </if>
+      <if test="istest != null">
+        istest = #{istest,jdbcType=VARCHAR},
+      </if>
+      <if test="reqpartment != null">
+        reqpartment = #{reqpartment,jdbcType=VARCHAR},
+      </if>
+      <if test="relatesys != null">
+        relatesys = #{relatesys,jdbcType=VARCHAR},
+      </if>
+      <if test="yewuer != null">
+        yewuer = #{yewuer,jdbcType=VARCHAR},
+      </if>
+      <if test="tester != null">
+        tester = #{tester,jdbcType=VARCHAR},
+      </if>
+      <if test="isproduct != null">
+        isproduct = #{isproduct,jdbcType=VARCHAR},
+      </if>
+      <if test="developer != null">
+        developer = #{developer,jdbcType=VARCHAR},
+      </if>
+      <if test="isupdate != null">
+        isupdate = #{isupdate,jdbcType=VARCHAR},
+      </if>
+      <if test="productdate != null">
+        productdate = #{productdate,jdbcType=VARCHAR},
+      </if>
+      <if test="descp != null">
+        descp = #{descp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="getAll" resultMap="RequireMap">
+  	SELECT * FROM require1
+  </select>
+  
+</mapper>

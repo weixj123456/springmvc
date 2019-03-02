@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+G:\SVNtest\100SVN\WorkSpace-Oxygen\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1896415788.index
+547478695.index
+1914070056.index
+1742520919.index
+3226958795.index
+3304574151.index
+2696663899.index
+485642199.index

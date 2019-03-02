@@ -1,0 +1,42 @@
+package com.jsx.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.jsx.model.Student;
+import com.jsx.service.StudentService;
+
+
+@Controller
+public class StudentController {
+      
+	@Autowired
+	private StudentService studentService;
+	public StudentService getUserService() {
+		return studentService;
+	}
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
+	
+	
+	@RequestMapping("addInfo")
+	public String add(Student student,HttpServletRequest request){
+		try {			
+//			user.setId(UUID.randomUUID().toString());
+			System.out.println(student.getId() + ":::::" + student.getName() + ":::::" + student.getAge());
+			String str = studentService.insertStudent(student);
+			System.out.println(str);
+			request.setAttribute("InfoMessage", str);
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("InfoMessage", "添加信息失败！具体异常信息：" + e.getMessage());
+		} finally {
+                return "result";
+          }
+	}
+	
+}

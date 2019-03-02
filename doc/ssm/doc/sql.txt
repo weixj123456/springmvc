@@ -1,0 +1,17 @@
+SET FOREIGN_KEY_CHECKS=0;
+ 
+-- ----------------------------
+-- Table structure for `adminuser`
+-- ----------------------------
+DROP TABLE IF EXISTS `adminuser`;
+CREATE TABLE `adminuser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+ 
+-- ----------------------------
+-- Records of adminuser
+-- ----------------------------
+INSERT INTO `adminuser` VALUES ('1', '小落', 'qwe');
